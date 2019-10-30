@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript Cheat Sheet
 
 ### DOM [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
     getElementById(id);                   // sélection par id, retourne un unique élément    
