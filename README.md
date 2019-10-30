@@ -58,7 +58,7 @@
     tab.shift();                    // supprime et retourne le premier élément
     tab.unshift("aaa");             // ajoute un nouvel élément au début du tableau, retourne la nouvelle taille du tableau
     
-    tab.slice(début, fin);          // retourne une portion de tableau entres les index debut et fin 
+    tab.slice(début, fin);          // retourne une portion de tableau entres les index début et fin 
     tab.splice(index, nb_sup, add1, ...);  // ajoute et supprime des éléments (index, supprimer nb_sup éléments, ajouter add1...) retourne un tableau des éléments supprimés ou un seul élément
     tab.concat(tab1, tab2, ...);    // fusionne des tableaux (retourne un tableau tab+tab1+tab2+...)
     
@@ -73,8 +73,8 @@
     
 ### Fonctions
     id = setTimeout( nom_fonction, 2000, arg1, arg2...);   // exécute la fonction dans 2000ms avec les arguments
-    clearTimeout(id);                                      // annule l'éxécution de la fonction
-    id = setInterval(nom_fonction, 2000, arg1, arg2...);   // éxécute la fonction à intervale de 2000 ms
+    clearTimeout(id);                                      // annule l'exécution de la fonction
+    id = setInterval(nom_fonction, 2000, arg1, arg2...);   // exécute la fonction à intervalle de 2000 ms
     clearInterval(id);                                     // annulation de la programmation de l'intervalle 
 
 ### Fonctions flêchées (ES6)
