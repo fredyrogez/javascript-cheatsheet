@@ -72,10 +72,10 @@
     obj.hasOwnProperty              // teste l'existence d'une propriété
     
 ### Fonctions
-    id = setTimeout( nom_fonction, 2000, arg1, arg2...);     // exécute la fonction dans 2000ms avec les arguments
-    clearTimeout(id);               // annule l'éxécution de la fonction
-    id = setInterval(nom_fonction, 2000, arg1, arg2...);     // éxécute la fonction à intervale de 2000 ms
-    clearInterval(id);              // annulation
+    id = setTimeout( nom_fonction, 2000, arg1, arg2...);   // exécute la fonction dans 2000ms avec les arguments
+    clearTimeout(id);                                      // annule l'éxécution de la fonction
+    id = setInterval(nom_fonction, 2000, arg1, arg2...);   // éxécute la fonction à intervale de 2000 ms
+    clearInterval(id);                                     // annulation de la programmation de l'intervalle 
 
 ### Fonctions flêchées (ES6)
     param => { }                    // function(param) { ... }
@@ -99,7 +99,7 @@
 ## Snippets
 
 ### ES6
-    [var1, var2] = [var2, var1];     //swap des variables var2->var1, var1->var2
+    [var1, var2] = [var2, var1];     // swap des variables var2->var1, var1->var2
 
 ### Balises html
     HTML5 : <script src="javascript.js"></script>
