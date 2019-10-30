@@ -67,3 +67,46 @@
     tab.reverse();                  // tri inverse alphabétique
     
     (ES7) tab.includes("abc")       // recherche la présence d'un élément de contenu "abc". Retourne true    
+    
+### Objets
+    obj.hasOwnProperty              // teste l'existence d'une propriété
+    
+### Fonctions
+    id = setTimeout( nom_fonction, 2000, arg1, arg2...);     // exécute la fonction dans 2000ms avec les arguments
+    clearTimeout(id);               // annule l'éxécution de la fonction
+    id = setInterval(nom_fonction, 2000, arg1, arg2...);     // éxécute la fonction à intervale de 2000 ms
+    clearInterval(id);              // annulation
+
+### Fonctions flêchées (ES6)
+    param => { }                    // function(param) { ... }
+    () => { }                       // function() { ... }
+    
+### Spread Operator (ES6)
+    tab1 = ["a", "b", "c"]; tab2 = ["d", "e", "f"];
+    var tab3 = [...tab1]                // copie de tableau
+    var tab2 = [...tab1, ...tab2]       // concaténation de tableau
+    console.log(...tab1);               // console : a, b, c
+
+### Destructuring (ES6)
+    const client = { nom: "Rog", prenom: "Fred", age: 30 }
+    const {nom, prenom, age} = client;                  // const nom="Rog"; const prenom="Fred"; const age=30;
+    const {nom, prenom, surnom="toto"} = client;        // const nom="Rog"; const prenom="Fred"; const surnom="toto";
+    const {nom:n, prenom:p, age} = client;              // const n="Rog"; const p="Fred"; const age=30;
+    
+    const monTab = [20, 56, 89];
+    const [var1, var2, var3] = monTab;                  // const var1=20; const var2=56; const var3=89;
+ 
+## Snippets
+
+### ES6
+    [var1, var2] = [var2, var1];     //swap des variables var2->var1, var1->var2
+
+### Balises html
+    HTML5 : <script src="javascript.js"></script>
+
+### Créer une balise p à la fin du body
+    const elem = document.createElement("p");
+    elem.innerHTML = "Mon texte !";
+    document.body.appendChild(elem);
+    // Résultat : <p>Mon Texte !</p>
+    
