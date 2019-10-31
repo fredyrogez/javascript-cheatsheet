@@ -21,7 +21,7 @@
     elem.classList.toggle("maClasse");    // "on/off" la classe maClasse à l'élément
 
 
-### Strings [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
+### String [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
     var str = "abcdefghijk";
     str.length;                     // longueur d'une string
     
@@ -47,7 +47,7 @@
     str.split(",");                 // divise une string, retourne un tableau, caractère de séparation : ","
     str.split("");                  // divise une string, retourne un tableau, chaque caractère isolé       
     
-### Arrays [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
+### Array [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
     var tab = ["abc", "def", "ghi"];
     
     tab.toString();                 // retourne une string : "abc,def,ghi,jkl"
@@ -67,6 +67,45 @@
     tab.reverse();                  // tri inverse alphabétique
     
     (ES7) tab.includes("abc")       // recherche la présence d'un élément de contenu "abc". Retourne true    
+    
+### Map [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
+    var map1 = new Map();
+    var map1 = new Map( [['key1', 'value1'], ['key2', 'value']] );
+    
+    map1.size;                      // retourne le nombre d'éléments
+    
+    map1.set('key', 'value');       // ajoute un élément 'value' de clé 'key'
+    map1.set(1, 'value');           // ajoute un élément 'value' de clé 1
+    map1.get('key');                // retourne l'élément de clé 'key'
+    map1.has('key');                // test la présence d'une élément de clé 'key'
+    
+    map1.clear();                   // efface tous les éléments
+    map1.delete('key');             // supprime l'élément de clé 'key'
+    
+    map1.keys();                    // retourne un objet Iterator des clés
+    map1.values();                  // retourne un objet Iterator des valeurs
+    map1.entries();                 // retourne un objet Iterator contenant des paires [clé, valeur]
+        
+    map1.forEach(fonction);   // exécute une fonction(value, key, map) sur chaque élément
+    map1.forEach(fonction, thisArg);  // ... avec thisArg
+    
+### Set [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
+    let set1 = new Set();
+    let set1 = new Set([1, 2, 3, 4, 5]);
+    
+    set1.size;                      // retourne le nombre d'éléments
+    
+    set1.add(value);                // ajoute un élément value
+    set1.has(value);                // test la présence d'une élément value
+    
+    set1.clear();                   // efface tous les éléments
+    set1.delete(value);             // supprime l'élément value
+    
+    set1.values();                  // retourne un objet Iterator des valeurs (alias set1.keys)
+    set1.entries();                 // retourne un objet Iterator contenant des paires [valeur, valeur]
+    
+    set1.forEach(fonction);         // exécute une fonction(value1, value2, map) sur chaque élément value1=value2
+    set1.forEach(fonction, thisArg);  // ... avec thisArg
     
 ### Objets
     obj.hasOwnProperty              // teste l'existence d'une propriété
