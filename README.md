@@ -49,9 +49,15 @@
     
 ### Array [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
     var tab = ["abc", "def", "ghi"];
+    tab.length;                     // nombre d'éléments du tableau
+    
+    tab.fill(value);                // remplit tous les éléments d'un tableau avec value
+    tab.fill(value, début);         
+    tab.fill(value, début, fin);
     
     tab.toString();                 // retourne une string : "abc,def,ghi,jkl"
     tab.join("-");                  // retourne une string avec séparateur personnalisé : "abc-def-ghi-jkl"
+    tab.map(function);               // crée un nouveau tableau en exécutant 'fonction(val, index, tab)' sur chaques éléments
     
     tab.pop();                      // retourne et supprime le dernier élément
     tab.push("jkl");                // ajoute un élément de contenu "jkl" à la fin, retourne la nouvelle taille du tableau
@@ -62,9 +68,18 @@
     tab.splice(index, nb_sup, add1, ...);  // ajoute et supprime des éléments (index, supprimer nb_sup éléments, ajouter add1...) retourne un tableau des éléments supprimés ou un seul élément
     tab.concat(tab1, tab2, ...);    // fusionne des tableaux (retourne un tableau tab+tab1+tab2+...)
     
+    tab.copyWithin(cible);          // copie une zone du tableau sur lui-même.
+    tab.copyWithin(cible, début);
+    tab.copyWithin(cible, début, fin);
+    
+    tab.find(callback);             // recherche dans le tableau la première occurence qui valide le callback(element, index, tab)
+    tab.filter(callback);           // retourne un tableau avec les éléments validés par le callback(element, index, tab)
+    
     tab.sort();                     // tri alphabétique d'un tableau. Tableau d'origine modifié
-    tab.sort((a,b) => a - b)        // tri numérique d'un tableau. Tableau d'origine modifié
+    tab.sort((a,b) => a - b);        // tri numérique d'un tableau. Tableau d'origine modifié
     tab.reverse();                  // tri inverse alphabétique
+    
+    tab.concat(tab2);               // retourne un tableau concaténé tab + tab2
     
     (ES7) tab.includes("abc")       // recherche la présence d'un élément de contenu "abc". Retourne true    
     
