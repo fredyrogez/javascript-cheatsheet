@@ -129,6 +129,21 @@
     set1.forEach(fonction);         // exécute une fonction(value1, value2, map) sur chaque élément value1=value2
     set1.forEach(fonction, thisArg);  // ... avec thisArg
     
+### Canvas    
+    HTML : <canvas width="150" height="150"></canvas>
+    JS : let canvas = document.getElementsByTagName('canvas');
+    let ctx = canvas.getContext('2d');  // ctx : objet accessible en JS
+    
+    ctx.strokeStyle = '#ff0000';    // couleur de ligne
+    ctx.lineWidth = 1;              // epaisseur du trait
+    ctx.lineCap = 'square';         // terminaison des lignes : 'butt', 'round', 'square'
+    ctx.lineJoin = 'tound'          // style des jointures dans un path : 'round', 'bever', 'miter'
+    ctx.fillStyle = '#00ff00';      // couleur de remplissage    
+    
+    ctx.fillRect(x, y, w, h);       // dessine un rectangle plein
+    ctx.strokeRect(x, y, w, h);     // dessine un rectangle fillaire
+       
+
 ### Objets
     obj.hasOwnProperty              // teste l'existence d'une propriété
     
