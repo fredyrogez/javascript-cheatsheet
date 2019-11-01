@@ -76,7 +76,8 @@
     tab.filter(callback);           // retourne un tableau avec les éléments validés par le callback(element, index, tab)
     
     tab.sort();                     // tri alphabétique d'un tableau. Tableau d'origine modifié
-    tab.sort((a,b) => a - b);        // tri numérique d'un tableau. Tableau d'origine modifié
+    tab.sort((a,b) => a - b);       // tri numérique d'un tableau. Tableau d'origine modifié
+    tab.sort((a,b) => b - a);       // tri numérique inverse d'un tableau. Tableau d'origine modifié
     tab.reverse();                  // tri inverse alphabétique
     
     tab.concat(tab2);               // retourne un tableau concaténé tab + tab2
