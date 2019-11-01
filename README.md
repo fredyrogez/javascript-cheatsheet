@@ -154,6 +154,14 @@
     ctx.quadraticCurveTo(cp1x, cp1y, x, y);
     ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
     
+    let pix = new Image();           // création d'un élément image
+    pix.src = 'image.png';           // fichier source de l'image
+    pix.onload = function () {...}
+    ctx.drawImage(pix, x, y);        // après 'onload'        
+    ctx.drawImage(pix, sx, sy, sw, sh, dx, dy, dw, dh); // découpe du sprite : source -> destination
+    
+}
+    
 
 ### Objets
     obj.hasOwnProperty              // teste l'existence d'une propriété
