@@ -137,12 +137,23 @@
     ctx.strokeStyle = '#ff0000';    // couleur de ligne
     ctx.lineWidth = 1;              // epaisseur du trait
     ctx.lineCap = 'square';         // terminaison des lignes : 'butt', 'round', 'square'
-    ctx.lineJoin = 'tound'          // style des jointures dans un path : 'round', 'bever', 'miter'
+    ctx.lineJoin = 'round'          // style des jointures dans un path : 'round', 'bever', 'miter'
     ctx.fillStyle = '#00ff00';      // couleur de remplissage    
     
     ctx.fillRect(x, y, w, h);       // dessine un rectangle plein
     ctx.strokeRect(x, y, w, h);     // dessine un rectangle fillaire
-       
+    ctx.clearRect(x, y, w, h);      // efface une zone rectangulaire
+    
+    ctx.beginPath();                // commence à dessiner une forme
+    ctx.closePath();                // termine la forme
+    ctx.stroke();                   // dessine la forme en traçant le contour
+    ctx.fill();                     // dessine la forme en traçant la zone de contenu
+    
+    ctx.moveTo(x, y);                   // déplace le stylo
+    ctx.lineTo(x, y);                   // trace une ligne
+    ctx.quadraticCurveTo(cp1x, cp1y, x, y);
+    ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+    
 
 ### Objets
     obj.hasOwnProperty              // teste l'existence d'une propriété
