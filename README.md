@@ -57,14 +57,15 @@
     
     tab.toString();                 // retourne une string : "abc,def,ghi,jkl"
     tab.join("-");                  // retourne une string avec séparateur personnalisé : "abc-def-ghi-jkl"
-    tab.map(function);               // crée un nouveau tableau en exécutant 'fonction(val, index, tab)' sur chaques éléments
+    tab.map(function);              // retourne un nouveau tableau en exécutant 'fonction(val, index, tab)' sur chaques éléments
+    tab.forEach(function);          // exécute 'fonction(val, index, tab)' sur chaques éléments
     
     tab.pop();                      // retourne et supprime le dernier élément
     tab.push("jkl");                // ajoute un élément de contenu "jkl" à la fin, retourne la nouvelle taille du tableau
     tab.shift();                    // supprime et retourne le premier élément
     tab.unshift("aaa");             // ajoute un nouvel élément au début du tableau, retourne la nouvelle taille du tableau
     
-    tab.slice(début, fin);          // retourne une portion de tableau entres les index début et fin 
+    tab.slice(début, fin);          // retourne une portion de tableau entre les index début et fin 
     tab.splice(index, nb_sup, add1, ...);  // ajoute et supprime des éléments (index, supprimer nb_sup éléments, ajouter add1...) retourne un tableau des éléments supprimés ou un seul élément
     tab.concat(tab1, tab2, ...);    // fusionne des tableaux (retourne un tableau tab+tab1+tab2+...)
     
@@ -74,11 +75,16 @@
     
     tab.find(callback);             // recherche dans le tableau la première occurence qui valide le callback(element, index, tab)
     tab.filter(callback);           // retourne un tableau avec les éléments validés par le callback(element, index, tab)
+    tab.every(callback);            // retourne true si tous les éléments sonts validés par le callback(element, index, tab)
+    tab.some(callback);             // retourne true si au moins un élément est validé par le callback(element, index, tab)
     
     tab.sort();                     // tri alphabétique d'un tableau. Tableau d'origine modifié
     tab.sort((a,b) => a - b);       // tri numérique d'un tableau. Tableau d'origine modifié
     tab.sort((a,b) => b - a);       // tri numérique inverse d'un tableau. Tableau d'origine modifié
     tab.reverse();                  // tri inverse alphabétique
+    
+    tab.reduce(function, val1);     // traite chaque valeur de la gauche vers la droite en applicant function(som, valeur) -> som
+    tab.reduceRight(function, val1); // idem de la droite vers la gauche
     
     tab.concat(tab2);               // retourne un tableau concaténé tab + tab2
     
