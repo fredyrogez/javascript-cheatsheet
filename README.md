@@ -37,7 +37,7 @@ str.split("")                   // divise une string, retourne un tableau, chaqu
 let tab = ["abc", "def", "ghi"] 
 tab.length                      // nombre d'éléments du tableau
 
-tab.fill(value)                 // remplit tous les éléments d'un tableau avec value
+tab.fill(value)                 // rempli tous les éléments d'un tableau avec value
 tab.fill(value, début)          
 tab.fill(value, début, fin) 
 
