@@ -1,15 +1,14 @@
 # JavaScript Cheat Sheet
 
-* [String](https://github.com/rogez/JavaScript#string)
-* [Array](https://github.com/rogez/JavaScript#array)
-* [Map](https://github.com/rogez/JavaScript#map)
-* [Set](https://github.com/rogez/JavaScript#set)
-* [DOM](https://github.com/rogez/JavaScript#dom)
-* [Canvas](https://github.com/rogez/JavaScript#canvas)
+* [String](https://github.com/rogez/JavaScript#string) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
+* [Array](https://github.com/rogez/JavaScript#array) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
+* [Map](https://github.com/rogez/JavaScript#map) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
+* [Set](https://github.com/rogez/JavaScript#set) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
+* [DOM](https://github.com/rogez/JavaScript#dom) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
+* [Canvas](https://github.com/rogez/JavaScript#canvas) [[MDN](https://developer.mozilla.org/fr/docs/Web/HTML/Canvas)]
 * [Snippets](https://github.com/rogez/JavaScript#snippets)
 
 ### String
-[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
 ```js
 let str = "abcdefghijk"
 str.length                      // longueur d'une string
@@ -38,7 +37,6 @@ str.split("")                   // divise une string, retourne un tableau, chaqu
 ```
 
 ### Array
-[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
 ```js
 let tab = ["abc", "def", "ghi"] 
 tab.length                      // nombre d'éléments du tableau
@@ -89,7 +87,6 @@ let list = Array.from(querySelectorAll('div'))    // nodeList -> array
 ```
     
 ### Map
-[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
 ```js
 let map1 = new Map() 
 let map1 = new Map( [['key1', 'value1'], ['key2', 'value']] ) 
@@ -113,7 +110,6 @@ map1.forEach(fonction, thisArg)   // ... avec thisArg
 ```
     
 ### Set
-[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
 ```js
 let set1 = new Set() 
 let set1 = new Set([1, 2, 3, 4, 5]) 
@@ -134,7 +130,6 @@ set1.forEach(fonction, thisArg) // ... avec thisArg
 ```
 
 ### DOM
-[[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
 ```js
 getElementById('id')                  // sélection par id, retourne un unique élément    
 getElementsByTagName('tagName')       // sélection par nom de balise html, retourne un HTMLCollection
@@ -163,7 +158,7 @@ const obj = JSON.parse(str)  // obj.val1 === 42 ...
 const str2 = JSON.stringify({ x: 5, y: 6 })
 ```
 
-### Canvas    
+### Canvas
 ```html
 <!-- HTML -->
 <canvas width="150" height="150"></canvas>
