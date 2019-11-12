@@ -124,6 +124,73 @@ set1.entries()                  // retourne un objet Iterator contenant des pair
 set1.forEach(fonction)          // exécute une fonction(value1, value2, map) sur chaque élément value1=value2
 set1.forEach(fonction, thisArg) // ... avec thisArg
 ```
+
+### DOM [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
+```js
+getElementById('id')                  // sélection par id, retourne un unique élément    
+getElementsByTagName('tagName')       // sélection par nom de balise html, retourne un HTMLCollection
+getElementsByClassName('className')   // sélecteur par class, retourne une NodeList
+querySelector('div')                  // sélecteur CSS unique, retourne le premier élément (plus lent que getElement...)
+querySelectorAll('div')               // sélecteurs CSS multiple, retourne une NodeList statique (plus lent que getElement...)
+
+elem.getAttribute("href")             // contenu de l'attribut href de l'élément elem
+elem.setAttribute("title", "coucou")  // ajoute l'attribut title avec le contenu "coucou"
+
+elem.offsetHeight                     // hauteur totale de l'élément (+bord...)
+elem.clientHeight                     // surface interne de l'élément (-bord...)
+elem.offsetTop                        // distance en pixel de l'élément par rapport au début de page
+elem.syle.color = "#ff0000"           // modification du paramètre color du style de l'élément.
+elem.style.fontFamily = "Arial"       // attention : - remplacé par camelCase (font-family -> fontFamily)
+
+elem.classList.add("maClasse")        // ajoute la classe maClasse à l'élément
+elem.classList.remove("maClasse")     // supprime la classe maClasse à l'élément
+elem.classList.toggle("maClasse")     // "on/off" la classe maClasse à l'élément
+```
+
+### JSON
+```js
+const str = '{"val1" : 42, "val2" : "ABC"}'
+const obj = JSON.parse(str)  // obj.val1 === 42 ... 
+const str2 = JSON.stringify({ x: 5, y: 6 })
+```
+
+### Canvas    
+```html
+<!-- HTML -->
+<canvas width="150" height="150"></canvas>
+```
+
+```js
+let canvas = document.getElementsByTagName('canvas') 
+let ctx = canvas.getContext('2d')   // ctx : objet accessible en JS
+
+ctx.strokeStyle = '#ff0000'     // couleur de ligne
+ctx.lineWidth = 1               // epaisseur du trait
+ctx.lineCap = 'square'          // terminaison des lignes : 'butt', 'round', 'square'
+ctx.lineJoin = 'round'          // style des jointures dans un path : 'round', 'bever', 'miter'
+ctx.fillStyle = '#00ff00'       // couleur de remplissage    
+
+ctx.fillRect(x, y, w, h)        // dessine un rectangle plein
+ctx.strokeRect(x, y, w, h)      // dessine un rectangle fillaire
+ctx.clearRect(x, y, w, h)       // efface une zone rectangulaire
+
+ctx.beginPath()                 // commence à dessiner une forme
+ctx.closePath()                 // termine la forme
+ctx.stroke()                    // dessine la forme en traçant le contour
+ctx.fill()                      // dessine la forme en traçant la zone de contenu
+
+ctx.moveTo(x, y)                    // déplace le stylo
+ctx.lineTo(x, y)                    // trace une ligne
+ctx.quadraticCurveTo(cp1x, cp1y, x, y) 
+ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y) 
+
+let pix = new Image()            // création d'un élément image
+pix.src = 'image.png'            // fichier source de l'image
+pix.onload = function () {...}
+ctx.drawImage(pix, x, y)         // après 'onload'        
+ctx.drawImage(pix, sx, sy, sw, sh, dx, dy, dw, dh)  // découpe du sprite : source -> destination
+```    
+
 ### Objets
 ```js
 obj.hasOwnProperty              // teste l'existence d'une propriété
@@ -164,3 +231,62 @@ const {nom:n, prenom:p, age} = client               // const n="Rog"  const p="F
 const monTab = [20, 56, 89] 
 const [var1, var2, var3] = monTab                   // const var1=20  const var2=56  const var3=89 
 ```
+
+## Snippets
+
+### Fonction wait()
+```js
+function wait (ms)
+{
+  const t1 = performance.now()
+  let t2 = null
+  do {
+    t2 = performance.now()
+  }
+  while(t2-t1 < ms)
+}
+```
+
+### Game Loop
+```js
+let limitFps = 1000/60 // 60 fps
+function gameLoop() {
+  let timestamp = performance.now()
+
+  // updates, draw..
+
+  wait(limitFps - (performance.now() - timestamp) )
+  requestAnimationFrame(gameLoop)
+}
+gameLoop()
+```
+    
+### Tracer une forme sur un canvas avec rotation centrée sur l'élément
+```js
+const ctx = canvas.getContext('2d')    
+ctx.translate(x + w / 2, y + h / 2)         // translation au centre de l'objet
+ctx.rotate(a * Math.PI / 180)           // rotation : 'a' en degrés -> radians
+ctx.translate(0 - (x + w / 2), 0 - (y + h / 2))  // translation retour à l'origine
+ctx.strokeRect(x, y, w, h)
+```
+    
+### Charger une image
+```js
+let img = new Image()
+img.src = 'fichier_image.png'
+img.onload = function () { } // image chargée, on peut l'utiliser
+```
+
+### Swap de variables (ES6)
+```js
+[var1, var2] = [var2, var1]   // var2->var1, var1->var2
+```
+
+### Créer une balise p à la fin du body
+```js
+const elem = document.createElement('p')
+const text = document.createTextNode('Mon texte !')
+elem.appendChild(text)
+document.body.appendChild(elem)  // Création du code à la fin du body  : <p>Mon Texte !</p>
+```
+    
