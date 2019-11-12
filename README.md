@@ -43,8 +43,8 @@ tab.fill(value, début, fin)
 
 tab.toString()                  // retourne une string : "abc,def,ghi,jkl"
 tab.join("-")                   // retourne une string avec séparateur personnalisé : "abc-def-ghi-jkl"
-tab.map(function)               // retourne un nouveau tableau en exécutant 'fonction(val, index, tab)' sur chaques éléments
-tab.forEach(function)           // exécute 'fonction(val, index, tab)' sur chaques éléments
+tab.map(fonction)               // retourne un nouveau tableau en exécutant 'fonction(val, index, tab)' sur chaques éléments
+tab.forEach(fonction)           // exécute 'fonction(val, index, tab)' sur chaques éléments
 
 tab.pop()                       // retourne et supprime le dernier élément
 tab.push("jkl")                 // ajoute un élément de contenu "jkl" à la fin, retourne la nouvelle taille du tableau
@@ -68,8 +68,8 @@ tab.sort((a,b) => a - b)        // tri numérique d'un tableau. Tableau d'origin
 tab.sort((a,b) => b - a)        // tri numérique inverse d'un tableau. Tableau d'origine modifié
 tab.reverse()                   // tri inverse alphabétique
 
-tab.reduce(function, val1)      // traite chaque valeur de la gauche vers la droite en applicant function(som, valeur) -> som
-tab.reduceRight(function, val1) // idem de la droite vers la gauche
+tab.reduce(fonction, val1)      // traite chaque valeur de la gauche vers la droite en applicant fonction(som, valeur) -> som
+tab.reduceRight(fonction, val1) // idem de la droite vers la gauche
 
 tab.concat(tab2)                // retourne un tableau concaténé tab + tab2
 
