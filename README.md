@@ -50,7 +50,6 @@ tab.pop()                       // retourne et supprime le dernier élément
 tab.push("jkl")                 // ajoute un élément de contenu "jkl" à la fin, retourne la nouvelle taille du tableau
 tab.shift()                     // supprime et retourne le premier élément
 tab.unshift("aaa")              // ajoute un nouvel élément au début du tableau, retourne la nouvelle taille du tableau
-
 tab.slice(début, fin)           // retourne une portion de tableau entre les index début et fin 
 tab.splice(index, nb_sup, add1, ...)   // ajoute et supprime des éléments (index, supprimer nb_sup éléments, ajouter add1...) retourne un tableau des éléments supprimés ou un seul élément
 tab.concat(tab1, tab2, ...)     // fusionne des tableaux (retourne un tableau tab+tab1+tab2+...)
@@ -75,6 +74,12 @@ tab.reduceRight(function, val1) // idem de la droite vers la gauche
 tab.concat(tab2)                // retourne un tableau concaténé tab + tab2
 
 tab.includes("abc")             // ES7 : recherche la présence d'un élément de contenu "abc". Retourne true si trouvé
+
+let newTab = Array.from(objectIterable, functionMap)
+let newTab = Array.from('ABC')  // eq : let newTab = ['A', 'B', 'C']
+let newTab = Array.from([1, 2, 3], x => x * 10))  // eq : let newTab = [10, 20, 30]
+let list = Array.from(querySelectorAll('div'))    // nodeList -> array
+
 ```
     
 ### Map [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
