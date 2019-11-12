@@ -1,8 +1,12 @@
 # JavaScript Cheat Sheet
 
-* [DOM](https://github.com/rogez/JavaScript/blob/master/dom.md)
-* [Canvas](https://github.com/rogez/JavaScript/blob/master/canvas.md)
-* [Snippets](https://github.com/rogez/JavaScript/blob/master/snippets.md)
+* [String](https://github.com/rogez/JavaScript#string)
+* [Array](https://github.com/rogez/JavaScript#array)
+* [Map](https://github.com/rogez/JavaScript#map)
+* [Set](https://github.com/rogez/JavaScript#set)
+* [DOM](https://github.com/rogez/JavaScript#dom)
+* [Canvas](https://github.com/rogez/JavaScript#canvas)
+* [Snippets](https://github.com/rogez/JavaScript#snippets)
 
 ### String
 [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
