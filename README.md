@@ -4,7 +4,8 @@
 * [Canvas](https://github.com/rogez/JavaScript/blob/master/canvas.md)
 * [Snippets](https://github.com/rogez/JavaScript/blob/master/snippets.md)
 
-### String [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
+### String
+[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)]
 ```js
 let str = "abcdefghijk"
 str.length                      // longueur d'une string
@@ -32,7 +33,8 @@ str.split(",")                  // divise une string, retourne un tableau, carac
 str.split("")                   // divise une string, retourne un tableau, chaque caractère isolé       
 ```
 
-### Array [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
+### Array
+[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
 ```js
 let tab = ["abc", "def", "ghi"] 
 tab.length                      // nombre d'éléments du tableau
@@ -82,7 +84,8 @@ let list = Array.from(querySelectorAll('div'))    // nodeList -> array
 
 ```
     
-### Map [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
+### Map
+[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
 ```js
 let map1 = new Map() 
 let map1 = new Map( [['key1', 'value1'], ['key2', 'value']] ) 
@@ -105,7 +108,8 @@ map1.forEach(fonction)            // exécute une fonction(value, key, map) sur 
 map1.forEach(fonction, thisArg)   // ... avec thisArg
 ```
     
-### Set [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
+### Set
+[[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
 ```js
 let set1 = new Set() 
 let set1 = new Set([1, 2, 3, 4, 5]) 
@@ -125,7 +129,8 @@ set1.forEach(fonction)          // exécute une fonction(value1, value2, map) su
 set1.forEach(fonction, thisArg) // ... avec thisArg
 ```
 
-### DOM [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
+### DOM
+[[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
 ```js
 getElementById('id')                  // sélection par id, retourne un unique élément    
 getElementsByTagName('tagName')       // sélection par nom de balise html, retourne un HTMLCollection
