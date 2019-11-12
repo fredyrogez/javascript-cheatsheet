@@ -27,7 +27,7 @@ gameLoop()
     
 ### Tracer une forme sur un canvas avec rotation centrée sur l'élément
 ```js
-const ctx = canvas.getContext("2d")    
+const ctx = canvas.getContext('2d')    
 ctx.translate(x + w / 2, y + h / 2)         // translation au centre de l'objet
 ctx.rotate(a * Math.PI / 180)           // rotation : 'a' en degrés -> radians
 ctx.translate(0 - (x + w / 2), 0 - (y + h / 2))  // translation retour à l'origine
@@ -40,5 +40,17 @@ let img = new Image()
 img.src = 'fichier_image.png'
 img.onload = function () { } // image chargée, on peut l'utiliser
 ```
-        
+
+### Swap de variables (ES6)
+```js
+[var1, var2] = [var2, var1]   // var2->var1, var1->var2
+```
+
+### Créer une balise p à la fin du body
+```js
+const elem = document.createElement('p')
+const text = document.createTextNode('Mon texte !')
+elem.appendChild(text)
+document.body.appendChild(elem)  // Création du code à la fin du body  : <p>Mon Texte !</p>
+```
     
