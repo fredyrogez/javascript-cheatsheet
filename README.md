@@ -223,6 +223,7 @@ tab2 = ["d", "e", "f"]
 var tab3 = [...tab1]                // copie de tableau
 var tab2 = [...tab1, ...tab2]       // concaténation de tableau
 console.log(...tab1)                // console : a, b, c
+fonction(...tab1)                   // fonction("a", "b", "c")
 ```
 
 ### Destructuring (ES6)
@@ -242,55 +243,62 @@ const [var1, var2, var3] = monTab                   // const var1=20  const var2
 ```js
 function wait (ms)
 {
-  const t1 = performance.now()
-  let t2 = null
+  const t1 = performance.now();
+  let t2 = null;
   do {
-    t2 = performance.now()
+    t2 = performance.now();
   }
-  while(t2-t1 < ms)
+  while(t2-t1 < ms);
 }
 ```
 
 ### Game Loop
 ```js
-let limitFps = 1000/60 // 60 fps
+let limitFps = 1000/60; // 60 fps
 function gameLoop() {
-  let timestamp = performance.now()
+  let timestamp = performance.now();
 
   // updates, draw..
 
-  wait(limitFps - (performance.now() - timestamp) )
-  requestAnimationFrame(gameLoop)
+  wait(limitFps - (performance.now() - timestamp) );
+  requestAnimationFrame(gameLoop);
 }
-gameLoop()
+gameLoop();
 ```
     
 ### Tracer une forme sur un canvas avec rotation centrée sur l'élément
 ```js
-const ctx = canvas.getContext('2d')    
-ctx.translate(x + w / 2, y + h / 2)         // translation au centre de l'objet
-ctx.rotate(a * Math.PI / 180)           // rotation : 'a' en degrés -> radians
-ctx.translate(0 - (x + w / 2), 0 - (y + h / 2))  // translation retour à l'origine
-ctx.strokeRect(x, y, w, h)
+const ctx = canvas.getContext('2d');
+ctx.translate(x + w / 2, y + h / 2);    // translation au centre de l'objet
+ctx.rotate(a * Math.PI / 180);          // rotation : 'a' en degrés -> radians
+ctx.translate(0 - (x + w / 2), 0 - (y + h / 2));  // translation retour à l'origine
+ctx.strokeRect(x, y, w, h);
+```
+
+### Distance entre deux points
+```js
+function distance (x0, y0, x1, y1) {
+  return Math.hypot(x1 - x0, y1 - y0);
+}
 ```
     
 ### Charger une image
 ```js
-let img = new Image()
-img.src = 'fichier_image.png'
+let img = new Image();
+img.src = 'fichier_image.png';
 img.onload = function () { } // image chargée, on peut l'utiliser
 ```
 
 ### Swap de variables (ES6)
 ```js
-[var1, var2] = [var2, var1]   // var2->var1, var1->var2
+[var1, var2] = [var2, var1];   // var2->var1, var1->var2
 ```
 
 ### Créer une balise p à la fin du body
 ```js
-const elem = document.createElement('p')
-const text = document.createTextNode('Mon texte !')
-elem.appendChild(text)
-document.body.appendChild(elem)  // Création du code à la fin du body  : <p>Mon Texte !</p>
+const elem = document.createElement('p');
+const text = document.createTextNode('Mon texte !');
+elem.appendChild(text);
+document.body.appendChild(elem);  // Création du code à la fin du body  : <p>Mon Texte !</p>
 ```
     
