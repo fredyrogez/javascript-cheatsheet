@@ -74,7 +74,7 @@ tab.some(callback)              // retourne true si au moins un élément est va
 tab.sort()                      // tri alphabétique d'un tableau. Tableau d'origine modifié
 tab.sort((a,b) => a - b)        // tri numérique d'un tableau. Tableau d'origine modifié
 tab.sort((a,b) => b - a)        // tri numérique inverse d'un tableau. Tableau d'origine modifié
-tab.reverse()                   // tri inverse alphabétique
+tab.reverse()                   // inverse les éléments d'un tableau
 
 tab.reduce(fonction, val1)      // traite chaque valeur de la gauche vers la droite en applicant fonction(som, valeur) -> som
 tab.reduceRight(fonction, val1) // idem de la droite vers la gauche
