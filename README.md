@@ -34,6 +34,10 @@ str.toLowerCase()               // retourne un string avec conversion en minuscu
 
 str.split(",")                  // divise une string, retourne un tableau, caractère de séparation : ","
 str.split("")                   // divise une string, retourne un tableau, chaque caractère isolé       
+
+let pommes = 10;
+const message = `J'ai ${pommes} pommes`;    // J'ai 10 pommes
+
 ```
 
 ### Array
