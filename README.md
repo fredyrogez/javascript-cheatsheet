@@ -5,6 +5,7 @@
 * [Map](https://github.com/rogez/JavaScript#map) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
 * [Set](https://github.com/rogez/JavaScript#set) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
 * [DOM](https://github.com/rogez/JavaScript#dom) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
+* [Fetch API](https://github.com/rogez/JavaScript#fetch-api) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)]
 * [Canvas](https://github.com/rogez/JavaScript#canvas) [[MDN](https://developer.mozilla.org/fr/docs/Web/HTML/Canvas)]
 * [Snippets](https://github.com/rogez/JavaScript#snippets)
 
