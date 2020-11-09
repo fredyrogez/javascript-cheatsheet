@@ -162,6 +162,30 @@ const obj = JSON.parse(str)  // obj.val1 === 42 ...
 const str2 = JSON.stringify({ x: 5, y: 6 })
 ```
 
+### Fetch API
+```js
+fetch('https://server/page')
+  .then(response => response.json())  // réponse -> json / .text() / .blob()
+  .then(r => console.log(r), r=> console.error(r));   // (réponse ok, réponse erreur)
+
+fetch('https://server/page')
+  .then(response => response.json())  // réponse -> json / .text() / .blob()
+  .then(r => console.log(r))          // réponse ok
+  .catch(r=> console.error(r));       // réponse erreur)
+
+// Envoyer des données par FormData
+const dataBody = new FormData();
+dataBody.append('nom', 'Rogez');
+fetch('https://server/page', { method: 'post', body: dataBody })
+  .then(/* ... */); //...
+
+// Envoyer des données au format JSON
+const dataBody = {nom: 'Rogez'};
+const dataJson = JSON.stringify(dataBody);
+fetch('https://server/page', { method: 'post', body: dataJson })
+  .then(/* ... */); //...
+```
+
 ### Canvas
 ```html
 <!-- HTML -->
