@@ -237,14 +237,27 @@ id = setInterval(nom_fonction, 2000, arg1, arg2...)    // exécute la fonction �
 clearInterval(id)                                      // annulation de la programmation de l'intervalle 
 ```
 
-### Fonctions flêchées (ES6)
+### Fonctions fléchées (ES6)
 ```js
 param => { }                 // function avec un seul paramètre
 (param1, param2) => { }      // function avec plusieurs paramètres
 () => { }                    // function sans paramètre
-
 ```
-    
+
+### Generators
+```js
+function* myGenerator() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+const myGen = myGenerator();
+console.log(myGen.next()); // { value: 1, done: false}
+console.log(myGen.next()); // { value: 2, done: false}
+console.log(myGen.next()); // { value: 3, done: true}
+console.log(myGen.next()); // { value: undefined, done: true}
+```
+
 ### Spread Operator (ES6)
 ```js
 tab1 = ["a", "b", "c"]
