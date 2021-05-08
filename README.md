@@ -14,7 +14,7 @@
 let str = "abcdefghijk"
 str.length                      // longueur d'une string
 
-str.concat(str1, str2, ...)     // concaténation de strings : str + str1 + str1 + ...
+str.concat(str1, str2, strN)    // concaténation de strings : str + str1 + str1 + ...
 
 str.indexOf(str1)               // recherche l'index de la première occurrence de str1 dans str, -1 si non trouvé
 str.lastIndexOf(str1)           // recherche l'index de la dernière occurrence de str1 dans str, -1 si non trouvé
@@ -22,7 +22,8 @@ str.search(regex)               // recherche l'expression régulière regex dans
 
 str.charAt(index)               // retourne le caractère à index
 str[index]                      // retourne le caractère à index
-str.charCodeAt(index)           // retourne le code du caractère à l'index
+str.charCodeAt(index)           // retourne le "code unit" du caractère à l'index (UTF-16, 16 bits)
+str.codePointAt(index)          // retourne le "code point" du caractère à l'index (Unicode) 
 str.slice(début, fin)           // retourne une sous-string de début à fin (index négatif possible, de la fin)
 str.slice(index)                // retourne une sous-string de index à la fin
 
@@ -31,7 +32,9 @@ str.replace(regex, str2)        // retourne une string ou toutes les occurrences
   
 str.toUpperCase()               // retourne un string avec conversion en majuscules, "abc" -> "ABC"
 str.toLowerCase()               // retourne un string avec conversion en minuscules, "ABC -> "abc"
-123.toString(base)              // retourne une string en base hex=16, oct=8, bin=2
+
+let n = 255
+n.toString(base)                // retourne une string en base hex=16, oct=8, bin=2
 
 str.split(",")                  // divise une string, retourne un tableau, caractère de séparation : ","
 str.split("")                   // divise une string, retourne un tableau, chaque caractère isolé       
@@ -60,8 +63,8 @@ tab.push("jkl")                 // ajoute un élément de contenu "jkl" à la fi
 tab.shift()                     // supprime et retourne le premier élément
 tab.unshift("aaa")              // ajoute un nouvel élément au début du tableau, retourne la nouvelle taille du tableau
 tab.slice(début, fin)           // retourne une portion de tableau entre les index début et fin 
-tab.splice(index, nb_sup, add1, ...)   // ajoute et supprime des éléments (index, supprimer nb_sup éléments, ajouter add1...) retourne un tableau des éléments supprimés ou un seul élément
-tab.concat(tab1, tab2, ...)     // fusionne des tableaux (retourne un tableau tab+tab1+tab2+...)
+tab.splice(index, nb_sup, add1, addN)   // ajoute et supprime des éléments (index, supprimer nb_sup éléments, ajouter add1...) retourne un tableau des éléments supprimés ou un seul élément
+tab.concat(tab1, tab2, tabN)    // fusionne des tableaux (retourne un tableau tab+tab1+tab2+...)
 
 tab.copyWithin(cible)           // copie une zone du tableau sur lui-même.
 tab.copyWithin(cible, début) 
@@ -86,7 +89,7 @@ tab.includes("abc")             // ES7 : recherche la présence d'un élément d
 
 let newTab = Array.from(objectIterable, functionMap)
 let newTab = Array.from('ABC')  // eq : let newTab = ['A', 'B', 'C']
-let newTab = Array.from([1, 2, 3], x => x * 10))  // eq : let newTab = [10, 20, 30]
+let newTab = Array.from([1, 2, 3], x => x * 10)   // eq : let newTab = [10, 20, 30]
 let list = Array.from(querySelectorAll('div'))    // nodeList -> array
 
 ```
@@ -219,7 +222,7 @@ ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
 
 let pix = new Image()            // création d'un élément image
 pix.src = 'image.png'            // fichier source de l'image
-pix.onload = function () {...}
+pix.onload = function () { /* ... */ }
 ctx.drawImage(pix, x, y)         // après 'onload'        
 ctx.drawImage(pix, sx, sy, sw, sh, dx, dy, dw, dh)  // découpe du sprite : source -> destination
 ```    
@@ -231,9 +234,9 @@ obj.hasOwnProperty              // teste l'existence d'une propriété
     
 ### Fonctions
 ```js
-id = setTimeout( nom_fonction, 2000, arg1, arg2...)    // exécute la fonction dans 2000ms avec les arguments
+id = setTimeout( nom_fonction, 2000, arg1, arg2, argN)    // exécute la fonction dans 2000ms avec les arguments
 clearTimeout(id)                                       // annule l'exécution de la fonction
-id = setInterval(nom_fonction, 2000, arg1, arg2...)    // exécute la fonction à intervalle de 2000 ms
+id = setInterval(nom_fonction, 2000, arg1, arg2, argN)    // exécute la fonction à intervalle de 2000 ms
 clearInterval(id)                                      // annulation de la programmation de l'intervalle 
 ```
 
