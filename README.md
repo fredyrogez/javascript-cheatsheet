@@ -4,6 +4,7 @@
 * [Array](https://github.com/rogez/JavaScript#array) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
 * [Map](https://github.com/rogez/JavaScript#map) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
 * [Set](https://github.com/rogez/JavaScript#set) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
+* [Object](https://github.com/rogez/JavaScript#object) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object)]
 * [DOM](https://github.com/rogez/JavaScript#dom) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
 * [Fetch API](https://github.com/rogez/JavaScript#fetch-api) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)]
 * [Canvas](https://github.com/rogez/JavaScript#canvas) [[MDN](https://developer.mozilla.org/fr/docs/Web/HTML/Canvas)]
@@ -48,6 +49,7 @@ const message = `J'ai ${pommes} pommes`;    // J'ai 10 pommes
 ```js
 let tab = ["abc", "def", "ghi"] 
 tab.length                      // nombre d'éléments du tableau
+tab.length = value              // tronque un tableau, supprime les derniers éléments (value doit être inférieure à length)
 
 tab.fill(value)                 // rempli tous les éléments d'un tableau avec value
 tab.fill(value, début)          
@@ -135,6 +137,29 @@ set1.entries()                  // retourne un objet Iterator contenant des pair
 
 set1.forEach(fonction)          // exécute une fonction(value1, value2, map) sur chaque élément value1=value2
 set1.forEach(fonction, thisArg) // ... avec thisArg
+```
+
+### Object
+```js
+Object.assign(target, source) // copie les valeurs des propriétés directes de l'objet source vers target
+Object.create(proto)          // création d'un nouvel objet avec le prototype "proto"
+Object.hasOwnProperty("prop") // retourne un booléen indiquant si l'objet possède la propriété "prop" en propre
+
+Object.defineProperty(obj, prop, descriptor) // définition d'une nouvelle propriété à l'objet 
+
+Object.keys(obj)              // retourne un tableau avec toutes les propriétés propres : [ key1, key2, keyN ]
+Object.values(obj)            // retourne un tableau avec toutes les valeurs des propriétés propres [ val1, val2, valN ]
+Object.entries(obj)           // retourne un tableau des clés/valeurs sous la forme [ [ key1, val1 ], [ key2, val2 ], [ keyN, valN ] ] 
+Object.fromEntries(tab)       // transforme une liste de clés/valeurs en objet (voir Object.entries(obj) pour le format)
+
+Object.freeze(obj)            // permet de geler un objet, l'objet devient immuable
+Object.seal(obj)              // scelle un objet, impossible d'ajouter ou de supprimer de nouvelles propriétés, les valeurs existantes peuvent êtres modifiées
+Object.preventExtensions(obj) // impossible d'ajouter de nouvelles propriétées, contrairement à "seal", permet de reconfigurer une propriété
+
+Object.isFrozen(obj)          // test si un objet a été gelé par Object.freeze(obj)
+Object.isSealed(obj)          // test si un objet a été scellé par Object.seal(obj)
+Object.isExtensible(obj)      // test si un objet est extensible, donc n'est pas Object.preventExtensions(obj)
+
 ```
 
 ### DOM
