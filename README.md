@@ -4,6 +4,7 @@
 * [Array](https://github.com/rogez/JavaScript#array) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)]
 * [Map](https://github.com/rogez/JavaScript#map) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map)]
 * [Set](https://github.com/rogez/JavaScript#set) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Set)]
+* [Date](https://github.com/rogez/JavaScript#date) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date)]
 * [Object](https://github.com/rogez/JavaScript#object) [[MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object)]
 * [DOM](https://github.com/rogez/JavaScript#dom) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model)]
 * [Fetch API](https://github.com/rogez/JavaScript#fetch-api) [[MDN](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)]
@@ -152,6 +153,27 @@ set1.entries()                  // retourne un objet Iterator contenant des pair
 
 set1.forEach(fonction)          // exécute une fonction(value1, value2, map) sur chaque élément value1=value2
 set1.forEach(fonction, thisArg) // ... avec thisArg
+```
+
+### Date
+```js
+Date.now() // retourne le nombre de ms depuis le 1er janvier 1970 UTC
+
+let d = new Date()
+d.getMilliseconds(); d.getSeconds(); d.getMinutes(); d.getHours();
+d.getUTCMilliseconds(); d.getUTCSeconds(); d.getUTCMinutes(); d.getUTCHours();
+d.getDay(); d.getMonth(); d.getFullYear()
+d.getUTCDay(); d.getUTCMonth(); d.getUTCFullYear()
+
+d.setMilliseconds(); d.setSeconds(); d.setMinutes(); d.setHours();
+d.setUTCMilliseconds(); d.setUTCSeconds(); d.setUTCMinutes(); d.setUTCHours();
+d.setDay(); d.setMonth(); d.setFullYear()
+d.setUTCDay(); d.setUTCMonth(); d.setUTCFullYear()
+
+Date.parse("2021-01-01")                    // 1609459200000
+Date.parse("2021-01-01T00:00:00.000Z")      // 1609459200000
+Date.parse("2021-01-01T00:00:00.000+00:00") // 1609459200000
+
 ```
 
 ### Object
