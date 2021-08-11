@@ -10,6 +10,21 @@
 * [Canvas](https://github.com/rogez/JavaScript#canvas) [[MDN](https://developer.mozilla.org/fr/docs/Web/HTML/Canvas)]
 * [Snippets](https://github.com/rogez/JavaScript#snippets)
 
+### Basics
+
+#### Ajout de JavaScript interne
+```html
+<script type="text/javascript"> /* Code JavaScript (HTML4) */ </script>
+<script> /* Code JavaScript (HTML5, omission de type possible) */ </script>
+```
+
+#### Ajout de JavaScript externe
+```html
+<script src="filename.js"></script>
+<script type="module" src="filename.js"></script>
+<script nomodule src="fallback.js"></script>
+```
+
 ### String
 ```js
 let str = "abcdefghijk"
